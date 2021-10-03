@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Product Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Product List</h1>
+    <a href="/new">Create New Product</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Stock</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="inventories : ${listInventories}">
+                <td th:text="${inventories.id}">Product ID</td>
+                <td th:text="${inventories.name}">Name</td>
+                <td th:text="${inventories.description}">Description</td>
+                <td th:text="${inventories.stock}">Stock</td>
+                <td th:text="${inventories.created_at}">Created At</td>
+                <td>
+                    <a th:href="'/edit/' + ${inventories.id}">Edit</a>
+                    &nbsp;&nbsp;&nbsp;
+                    <a th:href="'/delete/' + ${inventories.id}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>
