@@ -27,7 +27,7 @@ public class AppController {
  
     @Autowired
     private InventoriesService service;
-     
+     // ini adalah kode untuk menangani method yang ada
     // handler methods...
     @RequestMapping("/")
     public String viewHomePage(Model model) {
